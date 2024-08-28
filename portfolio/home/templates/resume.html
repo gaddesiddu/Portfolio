@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>Resume - Gadde Siddartha</title>
+    <style>
+        .resume-pdf {
+            width: 100%;
+            height: 800px; /* Adjust height as needed */
+            border: none; /* Remove border if any */
+        }
+
+        .resume-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+            text-align: center; /* Center text inside the container */
+            margin-top: 2rem; /* Add some space on top */
+        }
+
+        .download-button {
+            margin-top: 0.7rem;
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-body-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Gadde Siddartha</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/projects">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/resume">Resume</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="resume-container">
+        <!-- Embed PDF Viewer -->
+        <iframe class="resume-pdf" src="{% static 'resume/Siddartha-Gadde-Resume.pdf' %}" type="application/pdf"></iframe>
+        <br />
+        <!-- Download Link -->
+        <a href="{% static 'resume/Siddartha-Gadde-Resume.pdf' %}" download class="btn btn-primary download-button">
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
